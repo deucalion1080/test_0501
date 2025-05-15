@@ -2,13 +2,18 @@
 #ipynb =>測試與學習用
 #import les06_tools
 #from les06_tools import caculate_bmi,get_state
-import edu_test
+#import edu_test
+#from edu_test.les06_tools import caculate_bmi,get_state
+#from edu_test import les06_tools
+from edu_test.les06_tools import caculate_bmi as cac
+from edu_test.les06_tools import get_state as state
+
 
 def main():
     try:
         height:float = float(input("請輸入您的身高(要120~220公分之間):"))        
         weight:float = float(input("請輸入您的體重(要30~200公斤之間):"))        
-        BMI = edu_test.les06_tools.caculate_bmi(height,weight)
+        BMI = cac(height,weight)
     
     except ValueError:       
             print("輸入值錯誤!請重新輸入!")    
@@ -18,7 +23,7 @@ def main():
         print(f"您的身高是:{height}公分")
         print(f"您的體重是:{weight}公斤")
         print(f"您的BMI結果是:{BMI:.2f}")
-        print(edu_test.les06_tools.get_state(BMI))
+        print(state(BMI))
         
     print("BMI偵測結束!") 
 if __name__ == "__main__":
